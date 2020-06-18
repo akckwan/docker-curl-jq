@@ -1,5 +1,7 @@
-FROM alpine:3.12.0
+FROM docker:19.03.0-dind
 
-RUN apk update && apk add --no-cache curl jq
-
-ENTRYPOINT ["/usr/bin/curl"]
+RUN set -eux; \
+	apk add --no-cache \
+	curl \
+	jq \
+	; \
